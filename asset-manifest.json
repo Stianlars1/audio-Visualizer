@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/audio-Visualizer/static/css/main.ba3b76f3.css",
+    "main.js": "/audio-Visualizer/static/js/main.3ea84729.js",
+    "static/js/787.ad4f4dcc.chunk.js": "/audio-Visualizer/static/js/787.ad4f4dcc.chunk.js",
+    "index.html": "/audio-Visualizer/index.html",
+    "main.ba3b76f3.css.map": "/audio-Visualizer/static/css/main.ba3b76f3.css.map",
+    "main.3ea84729.js.map": "/audio-Visualizer/static/js/main.3ea84729.js.map",
+    "787.ad4f4dcc.chunk.js.map": "/audio-Visualizer/static/js/787.ad4f4dcc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba3b76f3.css",
+    "static/js/main.3ea84729.js"
+  ]
+}
