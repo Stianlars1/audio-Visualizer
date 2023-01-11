@@ -64,18 +64,18 @@ const Home = (props) => {
             if (props.email === "stian.larsen@mac.com" || props.email === "Stian.larsen@mac.com") {
                 navigate("/adminHome")
             } else {
-                navigate('/home')
+                navigate('/home');
             }
 
         }
 
-        if (authToken == "visitor") {
+        if (authToken === "visitor") {
             console.log("You are a visitor");
-            navigate("/home")
+            navigate("/home");
         }
 
-        if (!authToken) {
-            navigate('/login')
+        if ((!authToken || authToken === null) && !props.email) {
+            navigate("/login");
         }
     }, []);
 
@@ -134,14 +134,14 @@ const Home = (props) => {
         }
 
     }
+
+    // To keep record of which song-playlist were at, this function will keep track of which "playlist" page we are at.
     function updateMapSlicePrevSongs() {
-
-
         if (songList1 === 0 && songList2 === 10){
             return
         } else {
 
-            // setAtThisPage(atThisPage => atThisPage -= 1);
+            // To display which page were at. example: were at page 1 for sure, then it should says 1/x, where x = total of lists. 
             localStorage.setItem('songListCount1', songList1 - 10);
             localStorage.setItem('songListCount2', songList2 - 10);
             localStorage.setItem('songpagecounter', songpage - 1);

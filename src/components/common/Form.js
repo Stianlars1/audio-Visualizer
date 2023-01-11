@@ -156,8 +156,8 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
 
                 <div className='formBox'>
                     <form>
-                        <input placeholder='Email..' className='input_text' onChange={(e) => setEmail(e.target.value)} id = "email" label="Enter your Email"></input>
-                        <input placeholder='Password..' className='input_text' type="password" onChange={(e) => setPassword(e.target.value)} id = "password" label="Enter your Password"></input>
+                        <input autoComplete='username' placeholder='Email..' className='input_text' onChange={(e) => setEmail(e.target.value)} id = "email" label="Enter your Email"></input>
+                        <input autoComplete='current-password' placeholder='Password..' className='input_text' type="password" onChange={(e) => setPassword(e.target.value)} id = "password" label="Enter your Password"></input>
                     </form>
                 </div>
                 

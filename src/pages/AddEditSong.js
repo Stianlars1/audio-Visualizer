@@ -17,6 +17,8 @@ const initialState = {
 
 // export function for adding and updating a song.
 const AddEditSong = ({e, email}) => {
+
+    // All the needed states for the "Add Song" page.
     const [data, setData] = useState(initialState);
     const {title, artist} = data;
     const [file, setFile] = useState(null);
@@ -27,10 +29,9 @@ const AddEditSong = ({e, email}) => {
     const {id} = useParams();
 
     const [imageFile, setImageFile] = useState(null);
-    // Run on state change for image upload...
 
 
-    // Dynamic Background
+    // Dynamic Background / NPM module
     const particlesInit = async (main) => {
     
         // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
@@ -53,7 +54,7 @@ const AddEditSong = ({e, email}) => {
         }
 
         if (!authToken) {
-            navigate('/login')
+            navigate('/home')
         }
     }, []);
 

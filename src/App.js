@@ -27,12 +27,14 @@ export const ThemeContext = createContext(null);
 export const ColorContext = createContext(null)
 
 const App = () => {
+
+    // Create "state" for darkMode, user-info.
     const [theme, setTheme] = useState("dark");
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
 
-
+    // NPM module for dynamic background
     const particlesInit = async (main) => {
     
         // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
@@ -46,10 +48,21 @@ const App = () => {
 
     // check for logged in user
     useEffect(() => {
+
+        // Retrieve auth token from google Auth
         let authToken = localStorage.getItem('Auth Token')
-    
+        
+
+        // Check if there is an auth token registered. if it is, then go straight to the application / else => login
         if (authToken) {
-            navigate('/home');
+            if (email === "stian.larsen@mac.com" || email === "Stian.larsen@mac.com") {
+                navigate("/adminhome");
+            } 
+            
+            else {
+                navigate('/home');
+            }
+            
         }
     }, []);
 
@@ -57,9 +70,11 @@ const App = () => {
     // Handle register og login confusion..
     const handleLoginRegisterConfusion = (id) => {
         if (id === 1) {
+            // If the user want to create an account for permission to add songs:
             navigate("/register")
         }
 
+        // If the user have already registered and are located at the register screen, take them to the login page:
         if (id === 2) {
             navigate("/login")
         }
@@ -112,6 +127,8 @@ const App = () => {
 
     }
 
+
+    // toggle DarkMode
     const toggleTheme = () => {
         setTheme((current) => (current === "light" ? "dark" : "light"))
     };
